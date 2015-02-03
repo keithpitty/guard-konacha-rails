@@ -2,7 +2,7 @@ $:.push File.expand_path('../lib', __FILE__)
 require 'guard/konacha/rails/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'guard-konacha-version'
+  s.name        = 'guard-konacha-rails'
   s.version     = Guard::KonachaRails::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Leonid Beder']
