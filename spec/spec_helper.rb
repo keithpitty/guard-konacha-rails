@@ -1,18 +1,12 @@
 ENV['RAILS_ENV'] ||= 'test'
 
-unless ENV['CI']
-  require 'simplecov'
-
-  SimpleCov.start do
-    add_group 'Guard::KonachaRails', 'lib/guard'
-    add_group 'Specs', 'spec'
-  end
-end
-
 require 'rspec'
+require 'coveralls'
 require 'timecop'
 require 'guard/konacha/konacha'
 require 'guard/compat/test/helper'
+
+Coveralls.wear!
 
 module Guard
   module UI
