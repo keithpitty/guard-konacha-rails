@@ -1,5 +1,5 @@
 module Guard
-  module KonachaRails
+  module KonachaRailsVersion
     VERSION = '1.1.3'.freeze
   end
 end

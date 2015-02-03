@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Guard::Konacha do
+describe Guard::KonachaRails do
   rails_env_file = File.expand_path('../../dummy/config/environment', __FILE__)
-  subject { Guard::Konacha.new(rails_environment_file: rails_env_file) }
+  subject { Guard::KonachaRails.new(rails_environment_file: rails_env_file) }
 
   before do
     # Silence UI.info output.
@@ -14,7 +14,7 @@ describe Guard::Konacha do
       expect(Guard::KonachaRails::Runner).to receive(:new).with(rails_environment_file: nil,
         spec_dir: 'spec/assets')
 
-      Guard::Konacha.new(rails_environment_file: nil, spec_dir: 'spec/assets')
+      Guard::KonachaRails.new(rails_environment_file: nil, spec_dir: 'spec/assets')
     end
   end
 

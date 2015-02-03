@@ -2,7 +2,7 @@ require 'rails'
 require 'konacha'
 
 module Guard
-  module KonachaRails
+  class KonachaRails
     class Formatter < ::Konacha::Formatter
       def initialize
         super($stdout)
