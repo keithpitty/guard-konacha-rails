@@ -7,27 +7,25 @@ require 'rails'
 require 'konacha'
 
 module Guard
-  module KonachaRails
-    class Plugin < Guard::Plugin
-      attr_accessor :runner
+  class Konacha < Plugin
+    attr_accessor :runner
 
-      def initialize(options = {})
-        super
+    def initialize(options = {})
+      super
 
-        @runner = Runner.new(options)
-      end
+      @runner = Guard::KonachaRails::Runner.new(options)
+    end
 
-      def start
-        runner.start
-      end
+    def start
+      runner.start
+    end
 
-      def run_all
-        runner.run
-      end
+    def run_all
+      runner.run
+    end
 
-      def run_on_changes(paths = [])
-        runner.run(paths)
-      end
+    def run_on_changes(paths = [])
+      runner.run(paths)
     end
   end
 end
