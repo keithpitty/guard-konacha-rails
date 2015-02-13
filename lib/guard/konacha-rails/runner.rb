@@ -1,5 +1,5 @@
 module Guard
-  module KonachaRails
+  class KonachaRails
     class Runner
       DEFAULT_OPTIONS = {
         run_all_on_start: true,
@@ -25,7 +25,7 @@ module Guard
 
         ::Konacha.mode = :runner
 
-        UI.info 'Guard::Konacha Initialized'
+        UI.info 'Guard::KonachaRails Initialized'
       end
 
       def start

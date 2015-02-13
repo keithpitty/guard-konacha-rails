@@ -1,7 +1,7 @@
 require 'rack/builder'
 
 module Guard
-  module KonachaRails
+  class KonachaRails
     class Server < ::Rack::Builder
       def self.new
         super do
