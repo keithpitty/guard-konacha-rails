@@ -37,6 +37,7 @@ module Guard
 
         paths.each do |path|
           if path.empty? or File.exists? real_path path
+            UI.info "Guard::KonachaRails running #{specs_description(path)}"
             runner.run konacha_path(path)
           end
         end
@@ -66,6 +67,10 @@ module Guard
         end
       end
 
+      def specs_description(path)
+        path.empty? ? "all specs" : path
+      end
+
       def runner
         ::Konacha::Runner.new(@session)
       end
@@ -75,7 +80,15 @@ module Guard
       end
 
       def real_path(path)
-        ::Rails.root.join(::Konacha.config[:spec_dir] + konacha_path(path) + (path[/\.js(\.coffee)?$/] || '')).to_s
+        path.empty? ? all_specs_path : specific_path(path)
+      end
+
+      def all_specs_path
+        "#{::Rails.root.join(::Konacha.config[:spec_dir])}#{konacha_path('')}"
+      end
+
+      def specific_path(path)
+        ::Rails.root.join(path).to_s
       end
 
       def unique_id
