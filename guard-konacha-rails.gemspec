@@ -7,10 +7,10 @@ Gem::Specification.new do |s|
   s.name        = 'guard-konacha-rails'
   s.version     = Guard::KonachaRailsVersion::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ['Leonid Beder']
-  s.email       = ['leonid.beder@gmail.com']
+  s.authors     = ['Leonid Beder', 'Keith Pitty']
+  s.email       = ['leonid.beder@gmail.com', 'keith@keithpitty.com']
   s.license     = 'MIT'
-  s.homepage    = 'https://github.com/lbeder/guard-konacha-rails'
+  s.homepage    = 'https://github.com/keithpitty/guard-konacha-rails'
   s.summary     = 'Guard plugin for the konacha testing framework'
   s.description = 'Guard plugin for the konacha testing framework.'
 
