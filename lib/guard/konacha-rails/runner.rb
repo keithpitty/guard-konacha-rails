@@ -46,6 +46,7 @@ module Guard
         notify
       rescue => e
         UI.error(e)
+        UI.info(e.message)
       end
 
       private
