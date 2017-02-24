@@ -50,7 +50,7 @@ describe Guard::KonachaRails::Runner do
     end
 
     it 'should run each path through runner and format results' do
-      allow(File).to receive(:exists?) { true }
+      allow(File).to receive(:exist?) { true }
       allow(runner).to receive(:formatter) { konacha_formatter }
       expect(konacha_formatter).to receive(:reset)
       expect(konacha_runner).to receive(:run).with('/1')
@@ -61,8 +61,8 @@ describe Guard::KonachaRails::Runner do
     end
 
     it 'should run each path with a valid extension' do
-      expect(File).to receive(:exists?).with(::Rails.root.join('spec/javascripts/1.js').to_s).and_return(true)
-      expect(File).to receive(:exists?).with(::Rails.root.join('spec/javascripts/foo/bar.js.coffee').to_s).and_return(true)
+      expect(File).to receive(:exist?).with(::Rails.root.join('spec/javascripts/1.js').to_s).and_return(true)
+      expect(File).to receive(:exist?).with(::Rails.root.join('spec/javascripts/foo/bar.js.coffee').to_s).and_return(true)
       expect(konacha_runner).to receive(:run).with('/1')
       expect(konacha_runner).to receive(:run).with('/foo/bar')
 
