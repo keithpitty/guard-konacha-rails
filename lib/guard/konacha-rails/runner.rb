@@ -36,7 +36,7 @@ module Guard
         formatter.reset
 
         paths.each do |path|
-          if path.empty? or File.exists? real_path path
+          if path.empty? or File.exist? real_path path
             UI.info "Guard::KonachaRails running #{specs_description(path)}"
             runner.run konacha_path(path)
           end
